@@ -187,27 +187,27 @@
                         {
                         case(preg_match('/^(GF@|LF@|TF@)[a-zA-Z-$&%*_][0-9a-zA-Z-$&%*_]*$/', $word) ? true : false):
                             $tyArg = "var";
-			    $argument->setType("$tyArg");
+			                $argument->setType("$tyArg");
                             $argument->setInf($word);
                             $token->addArg($argument);
                             break;
                         case(preg_match('/^string@([^#\\\\]|\\\\[\d]{3})*$/', $word) ? true : false):
                             $tyArg = "string";
-			    $part = explode("@", $word, 2);
+			                $part = explode("@", $word, 2);
                             $argument->setType("$tyArg");
                             $argument->setInf($part[1]);
                             $token->addArg($argument);
                             break;
                         case(preg_match('/^int@([+-]?[0-9]+$)/', $word) ? true : false):
                             $tyArg = "int";
-			    $part = explode("@", $word);
+			                $part = explode("@", $word);
                             $argument->setType("$tyArg");
                             $argument->setInf($part[1]);
                             $token->addArg($argument);
                             break;
                         case(preg_match('/^bool@(true|false)$/', $word) ? true : false):
                             $tyArg = "bool";
-			    $part = explode("@", $word);
+			                $part = explode("@", $word);
                             $argument->setType("$tyArg");
                             $argument->setInf($part[1]);
                             $token->addArg($argument);
