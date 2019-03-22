@@ -1,0 +1,14 @@
+.IPPcode18
+DEFVAR GF@counter
+MOVE GF@counter string@mmm
+PUSHS string@ccc
+PUSHS GF@counter
+WRITE string@counter\032obsahuje\032
+SETCHAR GF@counter int@1 string@k
+WRITE GF@counter
+POPS GF@counter
+WRITE GF@counter
+POPS GF@counter
+WRITE GF@counter
+WRITE string@\010
+LABEL end

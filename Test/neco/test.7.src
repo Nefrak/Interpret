@@ -1,0 +1,15 @@
+.IPPcode18
+DEFVAR GF@counter
+MOVE GF@counter string@a 
+call pod
+call pod
+JUMP end
+
+LABEL pod
+WRITE string@counter\032obsahuje\032
+WRITE GF@counter
+WRITE string@ 010
+CONCAT GF@counter GF@counter string@bc
+return
+
+LABEL end

@@ -1,0 +1,21 @@
+.IPPcode18
+DEFVAR GF@counter
+MOVE GF@counter bool@true
+AND GF@counter bool@false bool@true
+WRITE GF@counter
+AND GF@counter GF@counter GF@counter
+WRITE GF@counter
+AND GF@counter bool@true bool@true
+WRITE GF@counter
+OR GF@counter bool@false bool@true
+WRITE GF@counter
+NOT GF@counter GF@counter
+WRITE GF@counter
+OR GF@counter GF@counter GF@counter
+WRITE GF@counter
+OR GF@counter bool@true bool@true
+WRITE GF@counter
+NOT GF@counter GF@counter
+WRITE GF@counter
+NOT GF@counter bool@false
+WRITE GF@counter

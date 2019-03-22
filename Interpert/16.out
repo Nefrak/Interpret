@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<program language="IPPcode18">
+ <instruction order="1" opcode="JUMP">
+  <arg1 type="label">$$MAIN</arg1>
+ </instruction>
+ <instruction order="2" opcode="LABEL">
+  <arg1 type="label">recursive</arg1>
+ </instruction>
+ <instruction order="3" opcode="CREATEFRAME"/>
+ <instruction order="4" opcode="DEFVAR">
+  <arg1 type="var">TF@param</arg1>
+ </instruction>
+ <instruction order="5" opcode="POPS">
+  <arg1 type="var">TF@param</arg1>
+ </instruction>
+ <instruction order="6" opcode="DEFVAR">
+  <arg1 type="var">TF@param0</arg1>
+ </instruction>
+ <instruction order="7" opcode="MOVE">
+  <arg1 type="var">TF@param0</arg1>
+  <arg2 type="int">12</arg2>
+ </instruction>
+ <instruction order="8" opcode="DEFVAR">
+  <arg1 type="var">TF@res</arg1>
+ </instruction>
+ <instruction order="9" opcode="MOVE">
+  <arg1 type="var">TF@res</arg1>
+  <arg2 type="int">10</arg2>
+ </instruction>
+ <instruction order="10" opcode="DEFVAR">
+  <arg1 type="var">TF@$T0</arg1>
+ </instruction>
+ <instruction order="11" opcode="SUB">
+  <arg1 type="var">TF@$T0</arg1>
+  <arg2 type="var">TF@param</arg2>
+  <arg3 type="int">1</arg3>
+ </instruction>
+ <instruction order="12" opcode="MOVE">
+  <arg1 type="var">TF@param0</arg1>
+  <arg2 type="var">TF@$T0</arg2>
+ </instruction>
+ <instruction order="13" opcode="DEFVAR">
+  <arg1 type="var">TF@$T1</arg1>
+ </instruction>
+ <instruction order="14" opcode="EQ">
+  <arg1 type="var">TF@$T1</arg1>
+  <arg2 type="var">TF@param0</arg2>
+  <arg3 type="int">0</arg3>
+ </instruction>
+ <instruction order="15" opcode="JUMPIFNEQ">
+  <arg1 type="label">$L3</arg1>
+  <arg2 type="var">TF@$T1</arg2>
+  <arg3 type="bool">true</arg3>
+ </instruction>
+ <instruction order="16" opcode="PUSHS">
+  <arg1 type="int">42</arg1>
+ </instruction>
+ <instruction order="17" opcode="RETURN"/>
+ <instruction order="18" opcode="JUMP">
+  <arg1 type="label">$L2</arg1>
+ </instruction>
+ <instruction order="19" opcode="LABEL">
+  <arg1 type="label">$L3</arg1>
+ </instruction>
+ <instruction order="20" opcode="WRITE">
+  <arg1 type="var">TF@$T0</arg1>
+ </instruction>
+ <instruction order="21" opcode="PUSHS">
+  <arg1 type="var">TF@param0</arg1>
+ </instruction>
+ <instruction order="22" opcode="PUSHFRAME"/>
+ <instruction order="23" opcode="CALL">
+  <arg1 type="label">recursive</arg1>
+ </instruction>
+ <instruction order="24" opcode="POPFRAME"/>
+ <instruction order="25" opcode="DEFVAR">
+  <arg1 type="var">TF@$T4</arg1>
+ </instruction>
+ <instruction order="26" opcode="POPS">
+  <arg1 type="var">TF@$T4</arg1>
+ </instruction>
+ <instruction order="27" opcode="MOVE">
+  <arg1 type="var">TF@res</arg1>
+  <arg2 type="var">TF@$T4</arg2>
+ </instruction>
+ <instruction order="28" opcode="PUSHS">
+  <arg1 type="var">TF@res</arg1>
+ </instruction>
+ <instruction order="29" opcode="RETURN"/>
+ <instruction order="30" opcode="LABEL">
+  <arg1 type="label">$L2</arg1>
+ </instruction>
+ <instruction order="31" opcode="PUSHS">
+  <arg1 type="int">0</arg1>
+ </instruction>
+ <instruction order="32" opcode="RETURN"/>
+ <instruction order="33" opcode="LABEL">
+  <arg1 type="label">$$MAIN</arg1>
+ </instruction>
+ <instruction order="34" opcode="CREATEFRAME"/>
+ <instruction order="35" opcode="DEFVAR">
+  <arg1 type="var">TF@a</arg1>
+ </instruction>
+ <instruction order="36" opcode="MOVE">
+  <arg1 type="var">TF@a</arg1>
+  <arg2 type="int">12</arg2>
+ </instruction>
+ <instruction order="37" opcode="PUSHS">
+  <arg1 type="int">4</arg1>
+ </instruction>
+ <instruction order="38" opcode="PUSHFRAME"/>
+ <instruction order="39" opcode="CALL">
+  <arg1 type="label">recursive</arg1>
+ </instruction>
+ <instruction order="40" opcode="POPFRAME"/>
+ <instruction order="41" opcode="DEFVAR">
+  <arg1 type="var">TF@$T5</arg1>
+ </instruction>
+ <instruction order="42" opcode="POPS">
+  <arg1 type="var">TF@$T5</arg1>
+ </instruction>
+ <instruction order="43" opcode="MOVE">
+  <arg1 type="var">TF@a</arg1>
+  <arg2 type="var">TF@$T5</arg2>
+ </instruction>
+ <instruction order="44" opcode="WRITE">
+  <arg1 type="var">TF@a</arg1>
+ </instruction>
+</program>
+

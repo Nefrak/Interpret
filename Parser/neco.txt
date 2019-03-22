@@ -1,0 +1,41 @@
+//Nasledne zda jsou spravne napsany neterminaly
+            foreach ($parts as $i => &$value) 
+            {   
+                if ($i > 0) 
+                { 
+                    //asi muze byt vse
+                    //nejspis zmenit dekadicky kod /000 na znak (do 127)
+                    while(preg_match('/\\\\\d\d\d/', $value, $result) == true)
+                    {
+                        //upravime na cislo
+                        $result[0] = substr($result[0], 1);
+                        //hodnota znaku (neni osetrena)
+                        $replace = chr($result[0]);
+                        //nahradime znakem
+                        $value = preg_replace("/\\\\$result[0]/", "$replace", $value);
+                    }
+                }    
+            }
+
+                        foreach ($parts as $place => $word) 
+                        {
+                            if($place > 0)
+                            {
+                                $type = "";
+                                for($i = 0; $i < strlen($word); $i++)
+                                {
+                                    //pridani kontroly znaku pokud bude treba
+                                    if($word[$i] == "@")
+                                    {
+                                        $types = false;
+                                        foreach($frame as $position => $alowed) 
+                                        {
+                                            if(strtoupper($alowed) == strtoupper($type))
+                                                $types = true;
+                                        }
+                                    }
+                                    else
+                                        $type = $type . $word[$i];
+                                }
+                            }
+                        }

@@ -1,0 +1,22 @@
+.IPPcode18
+DEFVAR GF@counter
+DEFVAR GF@help
+DEFVAR GF@cislo
+DEFVAR GF@char
+MOVE GF@cislo int@2
+MOVE GF@char string@o
+READ GF@counter string 
+WRITE GF@counter
+STRLEN GF@help GF@counter
+WRITE GF@help
+GETCHAR GF@help GF@counter int@2
+WRITE GF@help
+GETCHAR GF@help GF@counter GF@cislo
+WRITE GF@help
+SETCHAR GF@counter int@2 string@a
+WRITE GF@counter
+SETCHAR GF@counter GF@cislo GF@char
+WRITE GF@counter
+TYPE GF@help GF@counter
+WRITE GF@help
+LABEL end
